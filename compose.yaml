@@ -1,0 +1,16 @@
+services:
+  database:
+    platform: linux/amd64
+    image: 'mysql:8.0.32'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=demo
+      - MYSQL_USER=myUser
+      - MYSQL_PASSWORD=root
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-p$$MYSQL_ROOT_PASSWORD","--protocol","tcp" ]
+      timeout: 15s
+      retries: 10
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --character-set-filesystem=utf8 --lower-case-table-names=1
+    ports:
+      - 3306:3306
