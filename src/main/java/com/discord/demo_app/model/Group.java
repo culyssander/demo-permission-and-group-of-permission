@@ -9,7 +9,8 @@ import lombok.Data;
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long groupId;
+    @Column(name = "group_id")
+    private Integer groupId;
     private String name;
     private String description;
 

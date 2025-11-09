@@ -4,6 +4,6 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class UserPermissionId {
-    private Long userId;
-    private Long permissionId;
+    private Integer userId;
+    private Integer permissionId;
 }

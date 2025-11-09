@@ -9,7 +9,7 @@ import lombok.Data;
 public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long permissionId;
+    private Integer permissionId;
     private String name;
     private String description;
 }
